@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditionals and Loops</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .even {
+            color: green;
+        }
+        .odd {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conditionals and Loops Example</h1>
+    <div id="conditionalOutput"></div>
+    <div id="loopOutput"></div>
+
+    <script>
+        // Conditional Example
+        const userLoggedIn = true; // Change to false to see the other condition
+        const userName = "Class";
+
+        const conditionalOutput = document.getElementById("conditionalOutput");
+        if (userLoggedIn) {
+            conditionalOutput.innerHTML = `<p>Welcome back, ${userName}!</p>`;
+        } else {
+            conditionalOutput.innerHTML = `<p>Please log in to continue.</p>`;
+        }
+
+        // Loop Example
+        const numbers = [1, 2, 3, 4, 5, 6, 23];
+        const loopOutput = document.getElementById("loopOutput");
+
+        let outputHTML = "<ul>";
+        for (let number of numbers) {
+            if (number % 2 === 0) {
+                // Even numbers in green
+                outputHTML += `<li class="even">Number ${number} is even.</li>`;
+            } else {
+                // Odd numbers in blue
+                outputHTML += `<li class="odd">Number ${number} is odd.</li>`;
+            }
+        }
+        outputHTML += "</ul>";
+        loopOutput.innerHTML = outputHTML;
+    </script>
+</body>
+</html>

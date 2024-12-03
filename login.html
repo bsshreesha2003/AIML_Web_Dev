@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Signup</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 20px;
+        }
+        .form-container {
+            margin-bottom: 20px;
+        }
+        .form-control {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Form -->
+    <div class="container form-container">
+        <h3>Login</h3>
+        <div class="row">
+            <div class="col-md-5">
+                <label for="loginEmail">Email</label>
+                <input type="email" id="loginEmail" class="form-control" placeholder="Enter your email">
+            </div>
+            <div class="col-md-5">
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword" class="form-control" placeholder="Enter your password">
+            </div>
+            <div class="col-md-5">
+                <button type="button" class="btn btn-primary mt-2" onclick="loginAlert()">Login</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Form -->
+    <div class="container form-container">
+        <h3>Signup</h3>
+        <div class="row">
+            <div class="col-md-3" style="display: flex;">
+                <div style="flex-grow: 0; width: 83px; position: relative;">
+                    <label for="Fprefix"><b>Prefix</b> <span style="color: red;">*</span></label>
+                    <select id="Fprefix" class="form-control prefix-select">
+                        <option value="" disabled selected>Prefix</option> <!-- Placeholder option -->
+                        <option value="Dr.">Dr.</option>
+                        <option value="Prof.">Prof.</option>
+                        <option value="Mr.">Mr.</option>
+                        <option value="Mrs.">Mrs.</option>
+                        <option value="Miss.">Miss.</option>
+                    </select>
+                </div>
+        
+                <!-- Faculty Name Input -->
+                <div style="flex-grow: 2; position: relative; margin-left: 0px; width: 200px;">
+                    <label for="facultyName"><b>Faculty Name</b> <span style="color: red;">*</span></label>
+                    <input type="text" class="form-control" id="facultyName" placeholder="Faculty Name" style="text-transform: uppercase;"><br>
+                </div>
+        </div>
+    
+        <div class="col-md-3" style="display: flex;">
+            <div style="flex-grow: 0; width: 83px; position: relative;">
+                <label for="Faprefix"><b>Prefix</b> <span style="color: red;">*</span></label>
+                <select id="Faprefix" class="form-control prefix-select">
+                    <option value="" disabled selected>Prefix</option> <!-- Placeholder option -->
+                    <option value="Dr.">Dr.</option>
+                    <option value="Prof.">Prof.</option>
+                    <option value="Mr.">Mr.</option>
+                    <option value="Mrs.">Mrs.</option>
+                    <option value="Miss.">Miss.</option>
+                </select>
+            </div>
+    
+            <!-- Father's Name Input -->
+            <div style="flex-grow: 2; position: relative; margin-left: 0px; width: 200px;">
+                <label for="fathName"><b>Father's Name</b> <span style="color: red;">*</span></label>
+                <input type="text" class="form-control" id="fathName" placeholder="Father's Name" style="text-transform: uppercase;"><br>
+            </div>
+            </div>
+    
+            <div class="col-md-3" style="display: flex;">
+                <div style="flex-grow: 0; width: 83px; position: relative;">
+                    <label for="moprefix"><b>Prefix</b> <span style="color: red;">*</span></label>
+                    <select id="moprefix" class="form-control prefix-select">
+                        <option value="" disabled selected>Prefix</option> <!-- Placeholder option -->
+                        <option value="Dr.">Dr.</option>
+                        <option value="Prof.">Prof.</option>
+                        <option value="Mr.">Mr.</option>
+                        <option value="Mrs.">Mrs.</option>
+                        <option value="Miss.">Miss.</option>
+                    </select>
+                </div>
+        
+                <!-- Mother's Name Input -->
+                <div style="flex-grow: 2; position: relative; margin-left: 0px; width: 200px;">
+                    <label for="MothName"><b>Mother's Name</b> <span style="color: red;">*</span></label>
+                    <input type="text" class="form-control" id="MothName" placeholder="Mother's Name" style="text-transform: uppercase;"><br>
+                </div>
+                </div>
+
+                <div class="col-md-3" style="display: flex;">
+                    <div style="flex-grow: 0; width: 85px; position: relative;">
+                        <label for="cc"><b>Dial Code</b><span style="color: red;">*</span></label>
+                        <select id="cc" class="form-control prefix-select">
+                            <option value="" disabled selected>Code</option> <!-- Placeholder option -->
+                            <option value="+91">+91</option>
+                            <option value="+1">+1</option>
+                            <option value="+44">+44</option>
+                        </select>
+                    </div>
+            
+                    <!-- Mother's Name Input -->
+                    <div style="flex-grow: 2; position: relative; margin-left: 0px; width: 200px;">
+                        <label for="cNum"><b>Contact Number</b> <span style="color: red;">*</span></label>
+                        <input type="text" class="form-control" id="cNum" placeholder="Contact Number" style="text-transform: uppercase;"><br>
+                    </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="aadh"><b>Aadhaar Number</b> <span style="color: red;">*</span></label>
+                        <input type="text" id="aadh" class="form-control" placeholder="Aadhaar Number" style="text-transform: uppercase;"><br>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="mail"><b>Email ID</b> <span style="color: red;">*</span></label>
+                        <input type="email" id="mail" class="form-control" placeholder="Enter your mail ID">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="date"><b>Date of Birth</b> <span style="color: red;">*</span></label>
+                        <input type="date" id="date" class="form-control" placeholder="Enter your DOB"><br>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="pan"><b>PAN Number</b> <span style="color: red;">*</span></label>
+                        <input type="text" id="pan" class="form-control" placeholder="Enter your PAN Number" style="text-transform: uppercase;"><br>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="pass"><b>Password</b> <span style="color: red;">*</span></label>
+                        <div class="input-group">
+                            <input type="password" id="pass" class="form-control" placeholder="Enter your password">
+                            <button class="btn btn-outline-secondary" type="button" id="togglePassword" style="width: 55px; margin-bottom: 0px; height: 38px; margin-left: auto; margin-top: 0px;">
+                                <i class="fa fa-eye-slash" id="toggleIcon"></i>
+                            </button>
+                        </div><br> 
+                    </div>
+
+                    <div class="col-md-8">
+                        <!-- Address Input -->
+                        <label for="address"><b>Address</b> <span style="color:red">*</span></label>
+                        <textarea id="address" class="form-control" placeholder="Address" style="text-transform: uppercase;" autocomplete="off"></textarea><br>
+                    </div>
+
+                    <div class="col-md-3">
+                        <!-- Gender Input -->
+                        <label for="bGroup"><b>Blood Group</b> <span style="color:red">*</span></label>
+                        <select class="form-control" id="bGroup" style="text-transform: uppercase;">
+                            <option value="">Select Blood Group</option>
+                            <option value="A+">A Positive (A+)</option>
+                            <option value="A-">A Negative (A-)</option>
+                            <option value="B+">B Positive (B+)</option>
+                            <option value="B-">B Negative (B-)</option>
+                            <option value="AB+">AB Positive (AB+)</option>
+                            <option value="AB-">AB Negative (AB-)</option>
+                            <option value="O+">O Positive (O+)</option>
+                            <option value="O-">O Negative (O-)</option>
+                        </select><br>
+                    </div>
+            <div class="col-md-3">
+                <button type="button" class="btn btn-primary mt-2" onclick="confirmSubmission()">Signup</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function loginAlert() {
+            alert("Login button clicked!");
+        }
+
+        function confirmSubmission() {
+            const confirmed = confirm("Are you sure you want to submit?");
+            if (confirmed) {
+                alert("Form submitted successfully!");
+            }
+        }
+
+        // JavaScript to toggle password visibility
+    const togglePassword = document.getElementById("togglePassword");
+    const passwordField = document.getElementById("pass");
+    const toggleIcon = document.getElementById("toggleIcon");
+
+    togglePassword.addEventListener("click", function () {
+        // Toggle the type attribute
+        const type = passwordField.getAttribute("type") === "password" ? "text" : "password";
+        passwordField.setAttribute("type", type);
+
+        // Toggle the icon
+        toggleIcon.classList.toggle("fa-eye-slash");
+        toggleIcon.classList.toggle("fa-eye");
+    });
+    </script>
+</body>
+</html>
